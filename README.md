@@ -4,6 +4,10 @@ A highly robust, topological maze-solving algorithm for the Waveshare AlphaBot2.
 
 Unlike traditional maze-solving robots that rely on unreliable wheel odometry or perfect grid mapping, this "Master Brain" uses an **Epsilon-Greedy Reinforcement Learning strategy** combined with behavioral loop-breaking. It navigates complex tracks, escapes closed loops, and guarantees map coverage through calculated randomness.
 
+## 🏆 Awards & Recognition
+**Honorable Mention (4th Place) — AUMOVIO 2026 Hackathon**
+This code was battle-tested at the AUMOVIO 2026 competition, successfully navigating a highly complex, non-linear track featuring honeycomb traps and acute angles to secure a top-tier finish.
+
 ## 🧠 Core Strategy & Features
 
 * **The Left-Hand Rule (Disciplined Mode):** By default, the robot routes itself through the maze using a strict left-hand wall-following algorithm.
