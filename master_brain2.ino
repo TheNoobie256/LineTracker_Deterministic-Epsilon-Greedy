@@ -31,7 +31,7 @@ int maxSpeed = 90;        // Absolute limit for PID spikes
 // --- STRATEGY VARIABLES ---
 unsigned long lastDecisionTime = 0;
 int currentBiasError = -3000; // Always default to Left
-int activeOverride = 0;       // NEW: Locks in the turn decision
+int activeOverride = 0;       // Locks in the turn decision
 
 // --- THE LOOP BREAKER (Counter + Timer) ---
 int consecutiveLefts = 0;
@@ -143,7 +143,6 @@ void loop() {
       // ----------------------------------------
       // STEP B: The Reality Check!
       // ----------------------------------------
-      // We know what we WANT to do, but does that path actually exist?
       if (currentBiasError == -3000 && leftSeesLine) {
         activeOverride = -3000; // Path exists, force Left!
         if (isCurious) setLEDs(255, 255, 255); else setLEDs(0, 0, 255);
@@ -153,7 +152,6 @@ void loop() {
         if (isCurious) setLEDs(255, 255, 255); else setLEDs(255, 255, 0);
       } 
       else {
-        // We want a path that doesn't exist! (e.g., Want left, but only right branch exists)
         // Cancel the override and let the PID naturally follow the line straight.
         activeOverride = 0; 
         setLEDs(0, 255, 0); // Green
